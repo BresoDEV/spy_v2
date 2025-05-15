@@ -37,6 +37,15 @@ namespace spy_instalador
         private void button1_Click(object sender, EventArgs e)
         {
 
+            string user = Environment.UserName;
+            if(textBox1.Text != "")
+            {
+                user = textBox1.Text;
+            } 
+
+
+
+
 
             if (!Directory.Exists("Usuarios"))
             {
@@ -56,15 +65,30 @@ namespace spy_instalador
             //}
             if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png"))
             {
-                File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+                //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+
+                File.Copy("img.png", "Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+            }
+             if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png"))
+            {
+                //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+
+                File.Copy("img.png", "Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png");
+            }
+              
+            if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/"+ user+".txt"))
+            {
+                //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+
+                File.WriteAllText("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt","");
             }
 
+           
+
             string texto = "";
-            texto += Environment.MachineName + "|";
-            texto += Environment.UserName + "|";
             texto += "0|";//acao
             texto += "0|";//data
-            texto += "0|";//FRASE
+            texto += "A virtude da aranha é a paciência, esperando a presa cair na teia|";//FRASE
             texto += "banana vigarista socorro";//ARRAY_PALAVRAS
 
 

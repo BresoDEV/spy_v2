@@ -36,6 +36,7 @@
             button3 = new Button();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(12, 147);
+            button2.Location = new Point(12, 158);
             button2.Name = "button2";
             button2.Size = new Size(249, 42);
             button2.TabIndex = 1;
@@ -81,7 +82,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(12, 195);
+            button3.Location = new Point(12, 206);
             button3.Name = "button3";
             button3.Size = new Size(249, 42);
             button3.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(192, 192, 255);
-            label2.Location = new Point(15, 254);
+            label2.Location = new Point(12, 267);
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 6;
@@ -104,12 +105,22 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Yellow;
+            textBox1.Location = new Point(12, 129);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Nome do usuario";
+            textBox1.Size = new Size(249, 23);
+            textBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(278, 287);
+            ClientSize = new Size(278, 339);
+            Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(groupBox1);
@@ -132,5 +143,6 @@
         private Button button3;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
+        private TextBox textBox1;
     }
 }

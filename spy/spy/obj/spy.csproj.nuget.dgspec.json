@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\spy\\spy\\spy.csproj": {}
+    "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy\\spy\\spy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\spy\\spy\\spy.csproj": {
+    "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy\\spy\\spy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\spy\\spy\\spy.csproj",
+        "projectUniqueName": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy\\spy\\spy.csproj",
         "projectName": "spy",
-        "projectPath": "C:\\Users\\User\\source\\repos\\spy\\spy\\spy.csproj",
+        "projectPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy\\spy\\spy.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\spy\\spy\\obj\\",
+        "outputPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy\\spy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

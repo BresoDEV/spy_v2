@@ -58,7 +58,7 @@
             // timer1
             // 
             timer1.Enabled = true;
-            timer1.Interval = 5000;
+            timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
             // textBox2
@@ -79,13 +79,13 @@
             // 
             // button2
             // 
-            button2.Location = new Point(264, 150);
+            button2.Location = new Point(251, 151);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 4;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // Form1
             // 

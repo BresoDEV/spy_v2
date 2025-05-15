@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\spy-instalador\\spy-instalador\\spy-instalador.csproj": {}
+    "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\spy-instalador\\spy-instalador\\spy-instalador.csproj": {
+    "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+        "projectUniqueName": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
         "projectName": "spy-instalador",
-        "projectPath": "C:\\Users\\User\\source\\repos\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+        "projectPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\spy-instalador\\spy-instalador\\obj\\",
+        "outputPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
