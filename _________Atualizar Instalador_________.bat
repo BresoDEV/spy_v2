@@ -6,5 +6,5 @@ del "spy-instalador.runtimeconfig.json"
 del "img.png"
 
 
-copy /Y ".\spy-instalador\spy-instalador\bin\Debug\net8.0-windows\*.*" ".\*.*"
+copy /Y ".\spy-instalador\spy-instalador\bin\Debug\net6.0-windows7.0\*.*" ".\*.*"
 

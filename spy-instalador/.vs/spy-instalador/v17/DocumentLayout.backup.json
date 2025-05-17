@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{238EE265-9C7A-4CD4-951E-701CE926501F}|spy-instalador\\spy-instalador.csproj|c:\\users\\user\\appdata\\roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{238EE265-9C7A-4CD4-951E-701CE926501F}|spy-instalador\\spy-instalador.csproj|solutionrelative:spy-instalador\\spy-instalador.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{238EE265-9C7A-4CD4-951E-701CE926501F}|spy-instalador\\spy-instalador.csproj|c:\\users\\user\\appdata\\roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{238EE265-9C7A-4CD4-951E-701CE926501F}|spy-instalador\\spy-instalador.csproj|solutionrelative:spy-instalador\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,26 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "spy-instalador",
+              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+              "RelativeDocumentMoniker": "spy-instalador\\spy-instalador.csproj",
+              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+              "RelativeToolTip": "spy-instalador\\spy-instalador.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-17T05:32:03.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\Form1.cs",
               "RelativeDocumentMoniker": "spy-instalador\\Form1.cs",
               "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\Form1.cs",
               "RelativeToolTip": "spy-instalador\\Form1.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAiwN0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAowBABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T02:19:49.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Projeto]",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\Form1.cs",
               "RelativeDocumentMoniker": "spy-instalador\\Form1.cs",
-              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\Form1.cs [Projeto]",
-              "RelativeToolTip": "spy-instalador\\Form1.cs [Projeto]",
+              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spy\\spy-instalador\\spy-instalador\\Form1.cs [Design]",
+              "RelativeToolTip": "spy-instalador\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T02:14:57.208Z"
+              "WhenOpened": "2025-05-13T02:14:57.208Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
