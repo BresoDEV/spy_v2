@@ -42,7 +42,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(6, 81);
+            button1.Location = new Point(6, 119);
             button1.Name = "button1";
             button1.Size = new Size(237, 23);
             button1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(12, 158);
+            button2.Location = new Point(12, 166);
             button2.Name = "button2";
             button2.Size = new Size(249, 42);
             button2.TabIndex = 1;
@@ -62,11 +62,12 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(button1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(249, 110);
+            groupBox1.Size = new Size(249, 148);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             // 
@@ -82,7 +83,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(12, 206);
+            button3.Location = new Point(12, 214);
             button3.Name = "button3";
             button3.Size = new Size(249, 42);
             button3.TabIndex = 5;
@@ -108,10 +109,10 @@
             // textBox1
             // 
             textBox1.BackColor = Color.Yellow;
-            textBox1.Location = new Point(12, 129);
+            textBox1.Location = new Point(6, 90);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Nome do usuario";
-            textBox1.Size = new Size(249, 23);
+            textBox1.Size = new Size(237, 23);
             textBox1.TabIndex = 7;
             // 
             // Form1
@@ -120,7 +121,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(278, 339);
-            Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(groupBox1);

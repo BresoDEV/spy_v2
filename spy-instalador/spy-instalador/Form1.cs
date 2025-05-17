@@ -38,10 +38,10 @@ namespace spy_instalador
         {
 
             string user = Environment.UserName;
-            if(textBox1.Text != "")
+            if (textBox1.Text != "")
             {
                 user = textBox1.Text;
-            } 
+            }
 
 
 
@@ -69,21 +69,21 @@ namespace spy_instalador
 
                 File.Copy("img.png", "Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
             }
-             if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png"))
+            if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png"))
             {
                 //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
 
                 File.Copy("img.png", "Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/wallpaper.png");
             }
-              
-            if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/"+ user+".txt"))
+
+            if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt"))
             {
                 //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
 
-                File.WriteAllText("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt","");
+                File.WriteAllText("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt", "");
             }
 
-           
+
 
             string texto = "";
             texto += "0|";//acao
@@ -279,7 +279,9 @@ namespace spy_instalador
             if (File.Exists(b + "/Windows Media Player.lnk"))
             {
                 label2.Text = "Instalado";
-            }else{
+            }
+            else
+            {
                 label2.Text = "Não Instalado";
             }
         }

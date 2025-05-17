@@ -1,0 +1,46 @@
+DATAS:
+            0       =   desativado
+            1       =   sempre ativo
+            data    =   executa na data determinada
+
+        ACOES:
+            0       =   Nada, mas mantem o programa aberto
+            1       =   Nada, e fecha o programa
+            2       =   Mouse loco
+            3       =   Poluir o Desktop com arquivos diversos
+            4       =   Poluir a pasta Documentos com arquivos diversos
+            5       =   Ficar abrindo a calculadora sem parar
+            6       =   Ficar abrindo o notepad sem parar
+            7       =   Ficar abrindo sites aleatorios sem parar (ver ARRAY_SITES)
+            8       =   Ficar digitando palavras aleatorios sem parar obtidas di site
+            9       =   Nicolas Cage na tela sem parar 
+            10      =   Desativa a internet
+            11      =   Desativa a internet ao navegar e ativa ao fechar navegadores 
+            12      =   Fecha os navegadores repetidamente
+            13      =   Buga o PC, finalizando o EXPLORER.EXE
+            14      =   Clica o Mouse em um lugar aleatorio da tela
+            15      =   Ficar digitando letras aleatorias sem parar
+            16      =   Simula um pixel queimado na tela (linha)
+            17      =   Simula um pixel queimado na tela
+            18      =   Corrompe os arquivos da pasta "Documentos" e fecha o programa
+            19      =   Desliga o pc
+            20      =   Reinicia o pc
+            21      =   Mensagem de erro e reinicia o pc
+            22      =   Fica alternando o tema do Windows entre dark e light
+            23      =   Aplica papel de parede via site
+            24      =   Fica minimizando e maximizando a janela atual
+            25      =   Exibe a tela da morte e depois desliga o pc
+            26      =   Exibe BallonTip com a frase do site
+            27      =   Fica ativando e desativando o capslock
+            28      =   Fica mudando o texto do CTRL+V com a frase do site
+            29      =   FakeFreeze usando um print da tela em tela cheia, parecendo que travou o pc
+            30      =   Simula a instalação de um virus e fecha o programa
+            31      =   Fica aumentando o volume de tempo em tempo
+            32      =   Fica diminuindo o volume de tempo em tempo
+            33      =   Renomeia a janela atual com a frase do site
+            34      =   Fica fechando a janela sendo usada atualmente
+            35      =   Corretor FDP (Ao apertar espaço, escreve algo aleatorio)
+            36      =   Fica redimencionando a janela sendo usada atualmente
+            37      =   Fica fazendo log-off no windows
+            38      =   Deixa transparente a janela sendo usada atualmente
+            39      =   Remove o botao FECHAR da janela sendo usada atualmente

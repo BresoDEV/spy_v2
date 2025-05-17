@@ -1,0 +1,17 @@
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\bin\Debug\net6.0-windows\spy-instalador.exe
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\bin\Debug\net6.0-windows\spy-instalador.deps.json
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\bin\Debug\net6.0-windows\spy-instalador.runtimeconfig.json
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\bin\Debug\net6.0-windows\spy-instalador.dll
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\bin\Debug\net6.0-windows\spy-instalador.pdb
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.csproj.AssemblyReference.cache
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy_instalador.Form1.resources
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.csproj.GenerateResource.cache
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.AssemblyInfoInputs.cache
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.AssemblyInfo.cs
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.csproj.CoreCompileInputs.cache
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.dll
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\refint\spy-instalador.dll
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.pdb
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\spy-instalador.genruntimeconfig.cache
+C:\Users\eduar\Documents\GitHub\spy_v2\spy-instalador\spy-instalador\obj\Debug\net6.0-windows\ref\spy-instalador.dll
