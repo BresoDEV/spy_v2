@@ -63,7 +63,7 @@ namespace Windows
      */
     class spybot
     {
-        public static string SITE = "https://bresodev.github.io/webtest/SpybotWeb/";
+        public static string SITE = "https://bresodev.github.io/spy_v2/";
 
         public static string MEU_MAC = "";
         public static string MEU_NOME = "";
