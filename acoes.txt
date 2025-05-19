@@ -44,3 +44,4 @@ DATAS:
             37      =   Fica fazendo log-off no windows
             38      =   Deixa transparente a janela sendo usada atualmente
             39      =   Remove o botao FECHAR da janela sendo usada atualmente
+	    40      =   Fica bipando o computador com o Console.Beep()

