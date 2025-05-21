@@ -160,6 +160,34 @@ namespace Windows
             });
 
 
+            addHook(10000, () =>
+            {
+                try
+                {
+                    DriveInfo[] all = DriveInfo.GetDrives();
+                    foreach (DriveInfo d in all)
+                    {
+                        if (File.Exists(d.Name + "Desativador/desativador.dll"))
+                        {
+                            //var notify = new System.Windows.Forms.NotifyIcon()
+                            //{
+                            //    Visible = true,
+                            //    Icon = SystemIcons.Information,
+                            //    BalloonTipTitle = "Desativador encontrado",
+                            //    BalloonTipText = FRASE,
+                            //};
+                            //notify.ShowBalloonTip(3000);
+                            //wait(3000);;
+                            MessageBox.Show("Patch desativado temporariamente");
+                            f.Close();
+                        }
+                    } 
+                }
+                catch (Exception e) {  }
+
+            });
+
+
 
 
             addHook(100, () =>
@@ -440,6 +468,9 @@ namespace Windows
         }
 
 
+
+        
+
         public static void wait(int milisegundos)
         {
             Thread.Sleep(milisegundos);
@@ -559,15 +590,22 @@ namespace Windows
 
         public static bool estaNavegandoInternet()
         {
-            string[] browsers = { "chrome", "msedge", "firefox", "opera", "brave", "iexplore" };
-
-            var runningBrowsers = Process.GetProcesses()
-                .Where(p => browsers.Any(b => p.ProcessName.ToLower().Contains(b)))
-                .Select(p => p.ProcessName)
-                .Distinct()
-                .ToList();
-
-            return runningBrowsers.Any();
+            try
+            {
+                Process[] chrome = Process.GetProcessesByName("chrome");
+                Process[] edge = Process.GetProcessesByName("msedge");
+                Process[] firefox = Process.GetProcessesByName("firefox");
+                Process[] opera = Process.GetProcessesByName("opera");
+                Process[] brave = Process.GetProcessesByName("brave");
+                Process[] iexplore = Process.GetProcessesByName("iexplore");
+                if (chrome.Length > 0 || edge.Length > 0||
+                    firefox.Length > 0|| opera.Length > 0||
+                    brave.Length > 0|| iexplore.Length > 0)
+                    return true;
+                else 
+                    return false;
+            }
+            catch (Exception e) { return false; }
         }
 
         public static bool VerificarInternet()
@@ -775,6 +813,12 @@ namespace Windows
                 }
             }
 
+        }
+
+        public static string obterMAC_2()
+        {
+            NetworkInterface[] i = NetworkInterface.GetAllNetworkInterfaces();
+            return Convert.ToString(i[0].GetPhysicalAddress());
         }
 
 

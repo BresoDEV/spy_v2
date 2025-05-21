@@ -32,11 +32,11 @@
             button1 = new Button();
             button2 = new Button();
             groupBox1 = new GroupBox();
+            textBox1 = new TextBox();
             label1 = new Label();
             button3 = new Button();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +71,15 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Yellow;
+            textBox1.Location = new Point(6, 90);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Nome do usuario";
+            textBox1.Size = new Size(237, 23);
+            textBox1.TabIndex = 7;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -89,7 +98,7 @@
             button3.TabIndex = 5;
             button3.Text = "Desinstalar do computador atual";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
+            button3.Click += button3_Click;
             // 
             // label2
             // 
@@ -105,15 +114,6 @@
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Yellow;
-            textBox1.Location = new Point(6, 90);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Nome do usuario";
-            textBox1.Size = new Size(237, 23);
-            textBox1.TabIndex = 7;
             // 
             // Form1
             // 

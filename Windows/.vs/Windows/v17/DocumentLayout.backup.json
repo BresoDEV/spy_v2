@@ -1,21 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\",
+  "WorkspaceRootPath": "D:\\Windows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|c:\\users\\user\\appdata\\roaming\\ftp\\spyv2\\windows\\windows\\spybot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|d:\\windows\\windows\\spybot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|solutionrelative:windows\\spybot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|c:\\users\\user\\appdata\\roaming\\ftp\\spyv2\\windows\\windows\\windows.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|solutionrelative:windows\\windows.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|c:\\users\\user\\appdata\\roaming\\ftp\\spyv2\\windows\\windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|d:\\windows\\windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|solutionrelative:windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|D:\\Windows\\windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D6779C6-DF6B-4D56-A714-DABC4374F873}|Windows\\Windows.csproj|solutionrelative:windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,27 +22,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Windows",
-              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\Windows.csproj",
-              "RelativeDocumentMoniker": "Windows\\Windows.csproj",
-              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\Windows.csproj",
-              "RelativeToolTip": "Windows\\Windows.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-17T05:35:17.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\Form1.cs",
+              "DocumentMoniker": "D:\\Windows\\Windows\\Form1.cs",
               "RelativeDocumentMoniker": "Windows\\Form1.cs",
-              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\Form1.cs",
+              "ToolTip": "D:\\Windows\\Windows\\Form1.cs",
               "RelativeToolTip": "Windows\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAiwAcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -57,23 +41,22 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "spybot.cs",
-              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\spybot.cs",
+              "DocumentMoniker": "D:\\Windows\\Windows\\spybot.cs",
               "RelativeDocumentMoniker": "Windows\\spybot.cs",
-              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\spybot.cs",
+              "ToolTip": "D:\\Windows\\Windows\\spybot.cs",
               "RelativeToolTip": "Windows\\spybot.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAiwD8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAKkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T03:33:30.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\Windows\\Windows\\Form1.cs",
+              "DocumentMoniker": "D:\\Windows\\Windows\\Form1.cs",
               "RelativeDocumentMoniker": "Windows\\Form1.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Windows\\Windows\\Form1.cs [Projeto]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Desktop\\Windows\\Windows\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T03:32:35.148Z"
             }

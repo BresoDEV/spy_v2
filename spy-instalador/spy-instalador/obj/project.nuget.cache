@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Bd8QK9RchXNzI1VdoP9LPj9xmiWg1Bfr+OJ4RcBdecTherC7ZJ9GIA+aorFeos1uSImcdzhmMoP9Gqp11PXgag==",
+  "dgSpecHash": "1t4/WIReh1Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\eduar\\Documents\\GitHub\\spy_v2\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }
