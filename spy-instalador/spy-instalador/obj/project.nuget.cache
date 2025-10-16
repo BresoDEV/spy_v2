@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1t4/WIReh1Y=",
+  "dgSpecHash": "kFj+06NeWvI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\AppData\\Roaming\\ftp\\spyv2\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
+  "projectFilePath": "D:\\spy-instalador\\spy-instalador\\spy-instalador.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",

